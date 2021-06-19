@@ -1,0 +1,3 @@
+MiguelAbal
+
+sequelize init
