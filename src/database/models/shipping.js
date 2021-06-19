@@ -10,8 +10,14 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
-    }
+      Shipping.hasOne(Address, {
+        foreignKey: 'address_id',
+        as: 'addresses'
+      })
+
+      Shipping.belongsTo(Order)
+    };
+
   };
   Shipping.init({
     type: DataTypes.STRING,
