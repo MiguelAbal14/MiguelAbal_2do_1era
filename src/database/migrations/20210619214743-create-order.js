@@ -15,13 +15,32 @@ module.exports = {
         type: Sequelize.DATE
       },
       user_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'users',
+          key: 'id'
+        }
       },
       payment_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'payments',
+          key: 'id'
+        }
       },
       shipping_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'shippings',
+          key: 'id'
+        }
+      },
+      state_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'states',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,
